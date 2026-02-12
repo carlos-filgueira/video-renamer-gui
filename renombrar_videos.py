@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 
 # ================= CONFIG =================
-APP_ICON = "ico/rename_videos_icon.png"
+APP_ICON = "ico/rename_videos_icon.ico"
 
 PRIMARY = "#6C63FF"
 SECONDARY = "#1E1E2F"
