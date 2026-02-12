@@ -1,9 +1,10 @@
 import os
+import platform
 import tkinter as tk
-from tkinter import ttk, filedialog, messagebox
+from tkinter import ttk, filedialog, messagebox,PhotoImage
 
-# ================= CONFIG =================
-APP_ICON = "ico/rename_videos_icon.ico"
+# ================== CONFIG =================
+APP_ICON = "ico/app_icon"
 
 PRIMARY = "#6C63FF"
 SECONDARY = "#1E1E2F"
@@ -62,8 +63,13 @@ root.title(" Video Renamer Pro")
 
 # Icono ventana
 try:
-    icon_img = tk.PhotoImage(file=APP_ICON)
-    root.iconphoto(True, icon_img)
+    if platform.system() == "Windows":
+        root.iconbitmap(f"{APP_ICON}.ico") 
+        # Usa .ico en Windows 
+    else: 
+        icon_img = PhotoImage(file=f"{APP_ICON}.png") 
+        # Usa .png en Linux 
+        root.iconphoto(True, icon_img)
 except:
     pass
 
